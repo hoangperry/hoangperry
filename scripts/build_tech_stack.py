@@ -1,25 +1,27 @@
 """Build animated tech-stack SVGs (light + dark) from skillicons.dev icons.
 
-Icons are embedded as base64 data URIs so their internal ids never collide,
-and the result is fully self-contained for GitHub's image proxy.
-Run: python3 scripts/build_tech_stack.py
+Layout: two infinite marquee rows scrolling in opposite directions, edges
+faded with a mask, each icon gently bobbing. Icons are embedded as base64
+data URIs so internal ids never collide and the file is self-contained.
+Run: /usr/bin/python3 scripts/build_tech_stack.py
 """
 import base64
 import urllib.request
 from pathlib import Path
 
-STACK = [
-    ("swift", "Swift"), ("go", "Go"), ("ts", "TypeScript"), ("python", "Python"),
-    ("react", "React"), ("nextjs", "Next.js"), ("threejs", "Three.js"), ("tauri", "Tauri"),
-    ("postgres", "PostgreSQL"), ("redis", "Redis"), ("docker", "Docker"), ("kubernetes", "Kubernetes"),
-    ("cloudflare", "Cloudflare"), ("gcp", "GCP"), ("linux", "Linux"), ("neovim", "Neovim"),
+ROWS = [
+    # (items, scroll direction: -1 = left, 1 = right, seconds per loop)
+    ([("swift", "Swift"), ("go", "Go"), ("ts", "TypeScript"), ("python", "Python"),
+      ("react", "React"), ("nextjs", "Next.js"), ("threejs", "Three.js"), ("tauri", "Tauri")], -1, 22),
+    ([("postgres", "PostgreSQL"), ("redis", "Redis"), ("docker", "Docker"), ("kubernetes", "Kubernetes"),
+      ("cloudflare", "Cloudflare"), ("gcp", "GCP"), ("linux", "Linux"), ("neovim", "Neovim")], 1, 26),
 ]
-PER_ROW = 8
 ICON = 56
-CELL_W = 96
-CELL_H = 104
-PAD_TOP = 18
-WAVE_SECONDS = 2.4
+CELL_W = 112
+ROW_H = 100
+PAD_Y = 14
+VIEW_W = 800
+BOB_SECONDS = 2.4
 THEMES = {"dark": ("dark", "#8b949e"), "light": ("light", "#57606a")}
 OUT_DIR = Path(__file__).resolve().parent.parent / "assets"
 
@@ -33,36 +35,50 @@ def fetch_icon(slug: str, theme: str) -> str:
         return base64.b64encode(resp.read()).decode()
 
 
+def cell(x: float, slug_data: str, label: str, delay: float) -> str:
+    return (
+        f'<g transform="translate({x},0)"><g class="bob" style="animation-delay:{delay:.2f}s">'
+        f'<image x="{(CELL_W - ICON) / 2}" width="{ICON}" height="{ICON}" href="data:image/svg+xml;base64,{slug_data}"/>'
+        f'<text x="{CELL_W / 2}" y="{ICON + 20}" text-anchor="middle">{label}</text>'
+        f"</g></g>"
+    )
+
+
 def build(theme_key: str) -> str:
     icon_theme, label_color = THEMES[theme_key]
-    rows = (len(STACK) + PER_ROW - 1) // PER_ROW
-    width, height = PER_ROW * CELL_W, rows * CELL_H + PAD_TOP
-    cells = []
-    for i, (slug, label) in enumerate(STACK):
-        col, row = i % PER_ROW, i // PER_ROW
-        x = col * CELL_W + (CELL_W - ICON) / 2
-        y = row * CELL_H + PAD_TOP
-        # Delay follows a diagonal so the wave rolls across both rows.
-        delay = (col + row * 2) * 0.12
-        data = fetch_icon(slug, icon_theme)
-        cells.append(
-            f'<g transform="translate({x},{y})">'
-            f'<g class="pop" style="animation-delay:{i * 0.06:.2f}s">'
-            f'<g class="bob" style="animation-delay:{delay:.2f}s">'
-            f'<image width="{ICON}" height="{ICON}" href="data:image/svg+xml;base64,{data}"/>'
-            f'<text x="{ICON / 2}" y="{ICON + 20}" text-anchor="middle">{label}</text>'
-            f"</g></g></g>"
+    height = len(ROWS) * ROW_H + PAD_Y
+    rows_svg, keyframes = [], []
+    for r, (items, direction, seconds) in enumerate(ROWS):
+        icons = [(fetch_icon(slug, icon_theme), label) for slug, label in items]
+        loop_w = len(items) * CELL_W
+        # Repeat the set enough times to always cover the viewport while shifting by one loop.
+        copies = VIEW_W // loop_w + 2
+        cells = "".join(
+            cell(c * loop_w + i * CELL_W, data, label, (i * 0.3) % BOB_SECONDS)
+            for c in range(copies) for i, (data, label) in enumerate(icons)
         )
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
+        start, end = (0, -loop_w) if direction < 0 else (-loop_w, 0)
+        keyframes.append(
+            f"@keyframes row{r} {{ from {{ transform: translateX({start}px); }} to {{ transform: translateX({end}px); }} }}"
+            f" .row{r} {{ animation: row{r} {seconds}s linear infinite; }}"
+        )
+        rows_svg.append(f'<g transform="translate(0,{r * ROW_H + PAD_Y})"><g class="row{r}">{cells}</g></g>')
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{VIEW_W}" height="{height}" viewBox="0 0 {VIEW_W} {height}">
+<defs>
+<linearGradient id="fade" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".12" stop-color="#fff" stop-opacity="1"/>
+<stop offset=".88" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<mask id="edges"><rect width="{VIEW_W}" height="{height}" fill="url(#fade)"/></mask>
+</defs>
 <style>
 text {{ font: 600 12px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: {label_color}; }}
-.pop {{ opacity: 0; transform-box: fill-box; transform-origin: center; animation: pop .5s cubic-bezier(.34,1.56,.64,1) forwards; }}
-.bob {{ animation: bob {WAVE_SECONDS}s ease-in-out infinite; }}
-@keyframes pop {{ from {{ opacity: 0; transform: scale(.4); }} to {{ opacity: 1; transform: scale(1); }} }}
-@keyframes bob {{ 0%, 100% {{ transform: translateY(0); }} 50% {{ transform: translateY(-9px); }} }}
-@media (prefers-reduced-motion: reduce) {{ .pop, .bob {{ animation: none; opacity: 1; }} }}
+.bob {{ animation: bob {BOB_SECONDS}s ease-in-out infinite; }}
+@keyframes bob {{ 0%, 100% {{ transform: translateY(0); }} 50% {{ transform: translateY(-8px); }} }}
+{' '.join(keyframes)}
+@media (prefers-reduced-motion: reduce) {{ .bob, .row0, .row1 {{ animation: none; }} }}
 </style>
-{''.join(cells)}
+<g mask="url(#edges)">{''.join(rows_svg)}</g>
 </svg>
 """
 
