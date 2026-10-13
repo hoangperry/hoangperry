@@ -30,27 +30,27 @@ const hoang = {
 ### 🚀 Featured projects
 
 <p align="center">
-  <a href="https://github.com/hoangperry/herminal"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&description_lines_count=2&repo=herminal" /></a>
-  <a href="https://github.com/hoangperry/hp-translator"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&description_lines_count=2&repo=hp-translator" /></a>
-  <a href="https://github.com/hoangperry/shikigami"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&description_lines_count=2&repo=shikigami" /></a>
-  <a href="https://github.com/hoangperry/2d-chatbot"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&description_lines_count=2&repo=2d-chatbot" /></a>
+  <a href="https://github.com/hoangperry/herminal"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&description_lines_count=2&repo=herminal" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=default&bg_color=f6f8fa&hide_border=true&description_lines_count=2&repo=herminal" /><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=default&bg_color=f6f8fa&hide_border=true&description_lines_count=2&repo=herminal" /></picture></a>
+  <a href="https://github.com/hoangperry/hp-translator"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&description_lines_count=2&repo=hp-translator" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=default&bg_color=f6f8fa&hide_border=true&description_lines_count=2&repo=hp-translator" /><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=default&bg_color=f6f8fa&hide_border=true&description_lines_count=2&repo=hp-translator" /></picture></a>
+  <a href="https://github.com/hoangperry/shikigami"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&description_lines_count=2&repo=shikigami" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=default&bg_color=f6f8fa&hide_border=true&description_lines_count=2&repo=shikigami" /><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=default&bg_color=f6f8fa&hide_border=true&description_lines_count=2&repo=shikigami" /></picture></a>
+  <a href="https://github.com/hoangperry/2d-chatbot"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&description_lines_count=2&repo=2d-chatbot" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=default&bg_color=f6f8fa&hide_border=true&description_lines_count=2&repo=2d-chatbot" /><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=default&bg_color=f6f8fa&hide_border=true&description_lines_count=2&repo=2d-chatbot" /></picture></a>
 </p>
 
 ### 🛠️ Tech stack
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=swift,go,ts,python,react,nextjs,threejs,tauri&perline=8" /><br/>
-  <img src="https://skillicons.dev/icons?i=postgres,redis,docker,kubernetes,cloudflare,gcp,linux,neovim&perline=8" />
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=swift,go,ts,python,react,nextjs,threejs,tauri&perline=8" /><source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=swift,go,ts,python,react,nextjs,threejs,tauri&perline=8&theme=light" /><img src="https://skillicons.dev/icons?i=swift,go,ts,python,react,nextjs,threejs,tauri&perline=8&theme=light" /></picture><br/>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=postgres,redis,docker,kubernetes,cloudflare,gcp,linux,neovim&perline=8" /><source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=postgres,redis,docker,kubernetes,cloudflare,gcp,linux,neovim&perline=8&theme=light" /><img src="https://skillicons.dev/icons?i=postgres,redis,docker,kubernetes,cloudflare,gcp,linux,neovim&perline=8&theme=light" /></picture>
 </p>
 
 ### 📊 GitHub stats
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=hoangperry&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hoangperry&layout=compact&theme=github_dark&hide_border=true&langs_count=8" />
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=hoangperry&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=hoangperry&show_icons=true&theme=default&bg_color=f6f8fa&hide_border=true&count_private=true&include_all_commits=true" /><img height="165" src="https://github-readme-stats.vercel.app/api?username=hoangperry&show_icons=true&theme=default&bg_color=f6f8fa&hide_border=true&count_private=true&include_all_commits=true" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=hoangperry&layout=compact&theme=github_dark&hide_border=true&langs_count=8" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=hoangperry&layout=compact&theme=default&bg_color=f6f8fa&hide_border=true&langs_count=8" /><img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hoangperry&layout=compact&theme=default&bg_color=f6f8fa&hide_border=true&langs_count=8" /></picture>
 </p>
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=hoangperry&theme=github-dark-blue&hide_border=true" />
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=hoangperry&theme=github-dark-blue&hide_border=true" /><source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=hoangperry&theme=default&background=F6F8FA&stroke=D0D7DE&hide_border=true" /><img src="https://streak-stats.demolab.com?user=hoangperry&theme=default&background=F6F8FA&stroke=D0D7DE&hide_border=true" /></picture>
 </p>
 
 ### 🐍 Eating my contributions
