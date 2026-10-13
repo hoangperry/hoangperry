@@ -1,9 +1,9 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=venom&color=0:0f2027,50:203a43,100:2c5364&height=220&section=header&text=Hoang%20N.%20Truong&fontColor=ffffff&fontSize=52&animation=twinkling&desc=Just%20a%20typical%20VibeEngineer%20%E2%80%A2%20HCMC%2C%20Vietnam&descAlignY=72&descSize=18" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=200&section=header&text=Hoang%20N.%20Truong&fontColor=ffffff&fontSize=48&fontAlignY=35&animation=twinkling&desc=Just%20a%20typical%20VibeEngineer%20%E2%80%A2%20HCMC%2C%20Vietnam&descAlignY=57&descSize=17" width="100%" />
 
 <a href="https://github.com/hoangperry">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=2500&pause=700&color=2EA043&center=true&vCenter=true&multiline=false&repeat=true&width=650&lines=%24+whoami+%E2%86%92+hoangperry;Building+native+macOS+apps+in+Swift+%EF%A3%BF;Shipping+AI+agents+%40+kamilabs-ai+%F0%9F%A4%96;Go+%E2%80%A2+TypeScript+%E2%80%A2+Python+%E2%80%A2+Swift;4%2C000%2B+commits+a+year+%E2%80%94+still+not+tired+%F0%9F%94%A5" alt="typing" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=2500&pause=700&color=2EA043&center=true&vCenter=true&multiline=false&repeat=true&width=800&lines=%24+whoami+%E2%86%92+hoangperry;Building+native+macOS+apps+in+Swift;Shipping+AI+agents+%40+kamilabs-ai;Go+%E2%80%A2+TypeScript+%E2%80%A2+Python+%E2%80%A2+Swift;4%2C000%2B+commits+a+year%2C+still+not+tired" alt="typing" />
 </a>
 
 <p>
@@ -30,12 +30,10 @@ const hoang = {
 ### 🚀 Featured projects
 
 <p align="center">
-  <a href="https://github.com/hoangperry/herminal"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&repo=herminal" /></a>
-  <a href="https://github.com/hoangperry/hp-translator"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&repo=hp-translator" /></a>
-  <a href="https://github.com/hoangperry/saigon-traffic-sim"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&repo=saigon-traffic-sim" /></a>
-  <a href="https://github.com/hoangperry/builderment-clone"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&repo=builderment-clone" /></a>
-  <a href="https://github.com/hoangperry/cam-trader"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&repo=cam-trader" /></a>
-  <a href="https://github.com/hoangperry/lottery"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&repo=lottery" /></a>
+  <a href="https://github.com/hoangperry/herminal"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&description_lines_count=2&repo=herminal" /></a>
+  <a href="https://github.com/hoangperry/hp-translator"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&description_lines_count=2&repo=hp-translator" /></a>
+  <a href="https://github.com/hoangperry/shikigami"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&description_lines_count=2&repo=shikigami" /></a>
+  <a href="https://github.com/hoangperry/2d-chatbot"><img width="49%" src="https://github-readme-stats.vercel.app/api/pin/?username=hoangperry&theme=github_dark&hide_border=true&description_lines_count=2&repo=2d-chatbot" /></a>
 </p>
 
 ### 🛠️ Tech stack
