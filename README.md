@@ -43,12 +43,13 @@ const hoang = {
   <picture><source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=postgres,redis,docker,kubernetes,cloudflare,gcp,linux,neovim&perline=8" /><source media="(prefers-color-scheme: light)" srcset="https://skillicons.dev/icons?i=postgres,redis,docker,kubernetes,cloudflare,gcp,linux,neovim&perline=8&theme=light" /><img src="https://skillicons.dev/icons?i=postgres,redis,docker,kubernetes,cloudflare,gcp,linux,neovim&perline=8&theme=light" /></picture>
 </p>
 
-### 📊 GitHub stats
+### 🏙️ My contribution city
 
-<p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=hoangperry&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=hoangperry&show_icons=true&theme=default&bg_color=f6f8fa&hide_border=true&count_private=true&include_all_commits=true" /><img height="165" src="https://github-readme-stats.vercel.app/api?username=hoangperry&show_icons=true&theme=default&bg_color=f6f8fa&hide_border=true&count_private=true&include_all_commits=true" /></picture>
-  <picture><source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=hoangperry&layout=compact&theme=github_dark&hide_border=true&langs_count=8" /><source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=hoangperry&layout=compact&theme=default&bg_color=f6f8fa&hide_border=true&langs_count=8" /><img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=hoangperry&layout=compact&theme=default&bg_color=f6f8fa&hide_border=true&langs_count=8" /></picture>
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hoangperry/hoangperry/main/profile-3d-contrib/profile-night-rainbow.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/hoangperry/hoangperry/main/profile-3d-contrib/profile-green-animate.svg" />
+  <img alt="3D contribution city" src="https://raw.githubusercontent.com/hoangperry/hoangperry/main/profile-3d-contrib/profile-green-animate.svg" width="100%" />
+</picture>
 <p align="center">
   <picture><source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=hoangperry&theme=github-dark-blue&hide_border=true" /><source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=hoangperry&theme=default&background=F6F8FA&stroke=D0D7DE&hide_border=true" /><img src="https://streak-stats.demolab.com?user=hoangperry&theme=default&background=F6F8FA&stroke=D0D7DE&hide_border=true" /></picture>
 </p>
