@@ -25,11 +25,11 @@
 
 ### 🛠️ Tech stack
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hoangperry/hoangperry/main/assets/tech-stack-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/hoangperry/hoangperry/main/assets/tech-stack-light.svg" />
-  <img alt="Swift, Go, TypeScript, Python, React, Next.js, Three.js, Tauri, PostgreSQL, Redis, Docker, Kubernetes, Cloudflare, GCP, Linux, Neovim" src="https://raw.githubusercontent.com/hoangperry/hoangperry/main/assets/tech-stack-light.svg" width="100%" />
-</picture>
+- **Languages:** Swift, Go, TypeScript, Python
+- **Frontend & apps:** React, Next.js, Three.js, Tauri
+- **Data:** PostgreSQL, Redis
+- **Infra:** Docker, Kubernetes, Cloudflare, GCP, Linux
+- **Editor:** Neovim
 
 ### 🌍 Open source I've contributed to
 
