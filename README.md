@@ -33,11 +33,18 @@
 
 ### 🌍 Open source I've contributed to
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hoangperry/hoangperry/main/assets/contributed-orgs-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/hoangperry/hoangperry/main/assets/contributed-orgs-light.svg" />
-  <img alt="Organizations contributed to, as listed on GitHub" src="https://raw.githubusercontent.com/hoangperry/hoangperry/main/assets/contributed-orgs-light.svg" width="100%" />
-</picture>
+<!-- ORGS:START -->
+- <img src="https://github.com/microsoft.png?size=40" width="16" height="16" /> [@microsoft](https://github.com/microsoft)
+- <img src="https://github.com/AvaloniaUI.png?size=40" width="16" height="16" /> [@AvaloniaUI](https://github.com/AvaloniaUI)
+- <img src="https://github.com/nextcloud.png?size=40" width="16" height="16" /> [@nextcloud](https://github.com/nextcloud)
+- <img src="https://github.com/nuxt.png?size=40" width="16" height="16" /> [@nuxt](https://github.com/nuxt)
+- <img src="https://github.com/huggingface.png?size=40" width="16" height="16" /> [@huggingface](https://github.com/huggingface)
+- <img src="https://github.com/agno-agi.png?size=40" width="16" height="16" /> [@agno-agi](https://github.com/agno-agi)
+- <img src="https://github.com/immich-app.png?size=40" width="16" height="16" /> [@immich-app](https://github.com/immich-app)
+- <img src="https://github.com/LazyVim.png?size=40" width="16" height="16" /> [@LazyVim](https://github.com/LazyVim)
+- <img src="https://github.com/zen-browser.png?size=40" width="16" height="16" /> [@zen-browser](https://github.com/zen-browser)
+- <img src="https://github.com/ghostty-org.png?size=40" width="16" height="16" /> [@ghostty-org](https://github.com/ghostty-org)
+<!-- ORGS:END -->
 
 ### 🐍 Eating my contributions
 

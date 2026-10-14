@@ -24,7 +24,6 @@ FETCH_ATTEMPTS = 3
 class Item:
     data_uri: str
     label: str
-    rounded: bool = False
 
 
 @dataclass(frozen=True)
@@ -90,27 +89,22 @@ def _layer(ring_idx: int, ring: Ring, front: bool) -> str:
     return "".join(out)
 
 
-def _core(cx: float, cy: float, theme: Theme, core_uri: str, core_text: str) -> str:
-    size = 84
-    inner = (
-        f'<image x="{cx - size / 2}" y="{cy - size / 2}" width="{size}" height="{size}" clip-path="url(#coreclip)" href="{core_uri}"/>'
-        if core_uri
-        else f'<circle cx="{cx}" cy="{cy}" r="{size / 2}" fill="{theme.core_fill}"/>'
+def _core(cx: float, cy: float, theme: Theme, core_text: str) -> str:
+    radius = 42
+    return (
+        f'<circle class="pulse" cx="{cx}" cy="{cy}" r="{radius + 6}" fill="{theme.core_glow}"/>'
+        f'<circle class="pulse late" cx="{cx}" cy="{cy}" r="{radius + 6}" fill="{theme.core_glow}"/>'
+        f'<circle cx="{cx}" cy="{cy}" r="{radius}" fill="{theme.core_fill}"/>'
         f'<text class="core" x="{cx}" y="{cy + 9}" text-anchor="middle">{core_text}</text>'
     )
-    return (
-        f'<circle class="pulse" cx="{cx}" cy="{cy}" r="{size / 2 + 6}" fill="{theme.core_glow}"/>'
-        f'<circle class="pulse late" cx="{cx}" cy="{cy}" r="{size / 2 + 6}" fill="{theme.core_glow}"/>'
-        f"{inner}"
-    )
 
 
-def render(rings: list, theme: Theme, core_uri: str = "", core_text: str = "") -> str:
+def render(rings: list, theme: Theme, core_text: str) -> str:
     outer_ry = max(r.ry for r in rings)
     height = int(2 * outer_ry + ICON + 70)
     cx, cy = WIDTH / 2, height / 2 - 6
     defs = "".join(
-        f'<image id="i{r}_{i}" width="{ICON}" height="{ICON}"{" clip-path=" + chr(34) + "url(#round)" + chr(34) if item.rounded else ""} href="{item.data_uri}"/>'
+        f'<image id="i{r}_{i}" width="{ICON}" height="{ICON}" href="{item.data_uri}"/>'
         for r, ring in enumerate(rings) for i, item in enumerate(ring.items)
     )
     keyframes = " ".join(
@@ -123,8 +117,6 @@ def render(rings: list, theme: Theme, core_uri: str = "", core_text: str = "") -
     fronts = "".join(_layer(r, rings[r], True) for r in reversed(order))
     return f"""<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{WIDTH}" height="{height}" viewBox="0 0 {WIDTH} {height}">
 <defs>
-<clipPath id="round" clipPathUnits="objectBoundingBox"><rect width="1" height="1" rx=".24"/></clipPath>
-<clipPath id="coreclip" clipPathUnits="objectBoundingBox"><circle cx=".5" cy=".5" r=".5"/></clipPath>
 {defs}
 </defs>
 <style>
@@ -137,7 +129,7 @@ text.core {{ font: 700 26px ui-monospace, 'SF Mono', Menlo, monospace; fill: {th
 @media (prefers-reduced-motion: reduce) {{ * {{ animation-play-state: paused !important; }} }}
 </style>
 {backs}
-{_core(cx, cy, theme, core_uri, core_text)}
+{_core(cx, cy, theme, core_text)}
 {fronts}
 </svg>
 """

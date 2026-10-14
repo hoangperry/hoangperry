@@ -17,14 +17,14 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - name: Build org marquee
+      - name: Update org list in README
         working-directory: scripts
         run: python build_contributed_orgs.py
       - name: Commit & Push
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add assets/contributed-orgs-*.svg
+          git add README.md
           if git commit -m "chore: refresh contributed organizations"; then
             git push
           fi
