@@ -31,6 +31,14 @@
   <img alt="Swift, Go, TypeScript, Python, React, Next.js, Three.js, Tauri, PostgreSQL, Redis, Docker, Kubernetes, Cloudflare, GCP, Linux, Neovim" src="https://raw.githubusercontent.com/hoangperry/hoangperry/main/assets/tech-stack-light.svg" width="100%" />
 </picture>
 
+### 🌍 Open source I've contributed to
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/hoangperry/hoangperry/main/assets/contributed-orgs-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/hoangperry/hoangperry/main/assets/contributed-orgs-light.svg" />
+  <img alt="Organizations contributed to, as listed on GitHub" src="https://raw.githubusercontent.com/hoangperry/hoangperry/main/assets/contributed-orgs-light.svg" width="100%" />
+</picture>
+
 ### 🐍 Eating my contributions
 
 <picture>

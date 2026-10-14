@@ -5,6 +5,7 @@
 <stop offset=".88" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
 </linearGradient>
 <mask id="edges"><rect width="800" height="214" fill="url(#fade)"/></mask>
+<clipPath id="round" clipPathUnits="objectBoundingBox"><rect width="1" height="1" rx=".24"/></clipPath>
 </defs>
 <style>
 text { font: 600 12px -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #57606a; }
