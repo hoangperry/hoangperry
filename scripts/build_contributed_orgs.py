@@ -9,15 +9,18 @@ import sys
 import urllib.request
 from pathlib import Path
 
-from marquee import Item, Row, fetch_data_uri, render
+from orbit import Item, Ring, Theme, fetch_data_uri, render
 
 USER = "hoangperry"
 # Own company and GitHub's discussion forum are not open-source contributions.
 SKIP = {"kamilabs-ai", "community"}
 FRAGMENT_URL = f"https://github.com/{USER}?action=show&controller=profiles&tab=contributions&user_id={USER}"
-THEMES = {"dark": "#8b949e", "light": "#57606a"}
+THEMES = {
+    "dark": Theme(label="#8b949e", core_fill="#161b22", core_glow="#58a6ff", core_text="#58a6ff"),
+    "light": Theme(label="#57606a", core_fill="#f6f8fa", core_glow="#0969da", core_text="#0969da"),
+}
 OUT_DIR = Path(__file__).resolve().parent.parent / "assets"
-LOOP_SECONDS_PER_ORG = 2.6
+SECONDS_PER_ORG = 2.8
 
 
 def fetch_orgs() -> list:
@@ -36,11 +39,12 @@ def main() -> int:
         return 1
     print("orgs:", ", ".join(orgs))
     items = tuple(Item(fetch_data_uri(f"https://github.com/{org}.png?size=112", "image/png"), f"@{org}", rounded=True) for org in orgs)
-    row = Row(items, -1, round(len(items) * LOOP_SECONDS_PER_ORG))
+    ring = Ring(items, 335, 112, round(len(items) * SECONDS_PER_ORG))
+    avatar = fetch_data_uri(f"https://github.com/{USER}.png?size=168", "image/png")
     OUT_DIR.mkdir(exist_ok=True)
-    for key, label_color in THEMES.items():
+    for key, theme in THEMES.items():
         path = OUT_DIR / f"contributed-orgs-{key}.svg"
-        path.write_text(render([row], label_color))
+        path.write_text(render([ring], theme, core_uri=avatar))
         print(f"wrote {path.name} ({path.stat().st_size // 1024}K)")
     return 0
 
